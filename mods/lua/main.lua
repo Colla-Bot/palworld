@@ -1,0 +1,5 @@
+NotifyOnNewObject("/Script/Pal.PalUIJoinGameBase", function(JoinGame)
+    local PalUtility = StaticFindObject("/Script/Pal.Default__PalUtility")
+    PalUtility:SetPassword(JoinGame, "...")
+    JoinGame:ConnectServerByAddress("...", 8211)
+end)

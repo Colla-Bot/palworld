@@ -1,0 +1,8 @@
+{
+  "name": "palbot",
+  "version": "1.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "node-addon-api": "^8.4.0"
+  }
+}

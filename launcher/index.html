@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>팰월드</title>
+  </head>
+  <body>
+    <div class="titlebar"></div>
+    <div id="error"></div>
+    <div id="start">
+      <svg
+        id="progress"
+        xmlns="http://www.w3.org/2000/svg"
+        width="60"
+        height="60"
+        viewBox="-7.5 -7.5 75 75"
+        style="transform: rotate(-90deg)"
+      >
+        <circle
+          r="20"
+          cx="30"
+          cy="30"
+          fill="transparent"
+          stroke="#e0e0e0"
+          stroke-width="8"
+        ></circle>
+        <circle
+          id="progress-bar"
+          r="20"
+          cx="30"
+          cy="30"
+          stroke="#eab308"
+          stroke-width="8"
+          stroke-linecap="round"
+          stroke-dashoffset="126px"
+          fill="transparent"
+          stroke-dasharray="126px"
+        ></circle>
+      </svg>
+      <div id="label">▶ 게임 시작</div>
+    </div>
+    <script type="module" src="/src/renderer.ts"></script>
+  </body>
+</html>
