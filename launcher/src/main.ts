@@ -132,9 +132,14 @@ const findInstallPath = async (window: BrowserWindow) => {
   try {
     return (await getAppPath(STEAM_APP_ID)).path;
   } catch {}
+  const defaultPath = path.join(
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common",
+    APP_NAME
+  );
   const { filePaths } = await dialog.showOpenDialog(window, {
     title: `${APP_NAME} 설치 경로를 선택해주세요`,
     properties: ["openDirectory"],
+    defaultPath: fs.existsSync(defaultPath) ? defaultPath : undefined,
   });
   if (!filePaths.length) {
     throw new Error("No selected directories");
@@ -199,8 +204,6 @@ const createWindow = async () => {
       path.join(__dirname, `../renderer/${MAIN_WINDOW_VITE_NAME}/index.html`)
     );
   }
-
-  mainWindow.webContents.openDevTools();
 
   const updateStatus = (status: string, progress: number) => {
     mainWindow.webContents.send("update-status", status, progress);
@@ -367,7 +370,7 @@ const createWindow = async () => {
   });
 
   try {
-    const res = await net.fetch(`${DIST_URL}config.json`);
+    const res = await net.fetch(`${DIST_URL}config.json`, { cache: "no-cache" });
     if (!res.ok) {
       throw new Error(`Failed to fetch config: ${res.status}`);
     }
