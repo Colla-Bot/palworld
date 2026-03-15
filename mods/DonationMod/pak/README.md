@@ -3,7 +3,3 @@
 - `Pal\Content\Pal\DataAsset\Item\DA_StaticItemDataAsset`
 - `Pal\Content\Pal\DataTable\Item\DT_ItemDataTable`
 - `Pal\Content\Pal\DataTable\Item\DT_ItemRecipeDataTable`
-- `Pal\Content\L10N\ko\Pal\DataTable\Text\DT_UI_Common_Text_Common`
-- `Pal\Content\Pal\Texture\UI\Logo_Splash\T_Palworld_Logo_Small_White`
-- `Pal\Content\Pal\Texture\UI\Title\T_title_BG`
-- `Pal\Content\Pal\Texture\UI\Title\T_Title_logo_shadow`
